@@ -75,11 +75,11 @@ This is perfect encapsulation—in a non-OO language. C programmers used to do t
 
 But then came OO in the form of C++—and the perfect encapsulation of C was broken.
 
-> 而 C++作为一种面向对象编程语言，反而破坏了 c 的完美封装性。
+> 而 C++ 作为一种面向对象编程语言，反而破坏了 C 的完美封装性。
 
 The C++ compiler, for technical reasons,1 needed the member variables of a class to be declared in the header file of that class. So our Point program changed to look like this:
 
-> 由于一些技术原因，C++编译器要求类的成员变量必须在该类的头文件中声明。这样一来，我们的 point.h 程序随之就改成了这样：
+> 由于一些技术原因，C++ 编译器要求类的成员变量必须在该类的头文件中声明。这样一来，我们的 point.h 程序随之就改成了这样：
 
 point.h
 
@@ -118,7 +118,7 @@ Clients of the header file point.h know about the member variables x and y! The 
 
 Indeed, the way encapsulation is partially repaired is by introducing the public, private, and protected keywords into the language. This, however, was a hack necessitated by the technical need for the compiler to see those variables in the header file.
 
-> 当然，C++通过在编程语言层面引入 public、private、protected 这些关键词，部分维护了封装性。但所有这些都是为了解决编译器自身的技术实现问题而引入的 hack——编译器由于技术实现原因必须在头文件中看到成员变量的定义。
+> 当然，C++ 通过在编程语言层面引入 public、private、protected 这些关键词，部分维护了封装性。但所有这些都是为了解决编译器自身的技术实现问题而引入的 hack——编译器由于技术实现原因必须在头文件中看到成员变量的定义。
 
 Java and C# simply abolished the header/implementation split altogether, thereby weakening encapsulation even more. In these languages, it is impossible to separate the declaration and definition of a class.
 
@@ -140,7 +140,7 @@ If OO languages did not give us better encapsulation, then they certainly gave u
 
 Well—sort of. Inheritance is simply the redeclaration of a group of variables and functions within an enclosing scope. This is something C programmers3 were able to do manually long before there was an OO language.
 
-> 嗯，其实也就一般般吧。简而言之，继承的主要作用是让我们可以在某个作用域内对外部定义的某一组变量与函数进行覆盖。这事实上也是 c 程序员早在面向对象编程语言发明之前就一直在做的事了。
+> 嗯，其实也就一般般吧。简而言之，继承的主要作用是让我们可以在某个作用域内对外部定义的某一组变量与函数进行覆盖。这事实上也是 C 程序员早在面向对象编程语言发明之前就一直在做的事了。
 
 Consider this addition to our original point.h C program:
 
@@ -207,7 +207,7 @@ If you look carefully at the main program, you’ll see that the NamedPoint data
 
 This kind of trickery was a common practice4 of programmers prior to the advent of OO. In fact, such trickery is how C++ implements single inheritance.
 
-> 面这种编程方式虽然看上去有些投机取巧，但是在面向对象理论被提出之前，这已经很常见了。其实，C++内部就是这样实现单继承的。
+> 面这种编程方式虽然看上去有些投机取巧，但是在面向对象理论被提出之前，这已经很常见了。其实，C++ 内部就是这样实现单继承的。
 
 Thus we might say that we had a kind of inheritance long before OO languages were invented. That statement wouldn’t quite be true, though. We had a trick, but it’s not nearly as convenient as true inheritance. Moreover, multiple inheritance is a considerably more difficult to achieve by such trickery.
 
@@ -305,7 +305,7 @@ In other words, getchar() simply calls the function pointed to by the read point
 
 This simple trick is the basis for all polymorphism in OO. In C++, for example, every virtual function within a class has a pointer in a table called a vtable, and all calls to virtual functions go through that table. Constructors of derivatives simply load their versions of those functions into the vtable of the object being created.
 
-> 这个简单的编程技巧正是面向对象编程中多态的基础。例如在 C++中，类中的每个虚函数（virtual function）的地址都被记录在一个名叫 vtable 的数据结构里。我们对虚函数的每次调用都要先查询这个表，其衍生类的构造函数负责将该衍生类的虚函数地址加载到整个对象的 vtable 中。
+> 这个简单的编程技巧正是面向对象编程中多态的基础。例如在 C++ 中，类中的每个虚函数（virtual function）的地址都被记录在一个名叫 vtable 的数据结构里。我们对虚函数的每次调用都要先查询这个表，其衍生类的构造函数负责将该衍生类的虚函数地址加载到整个对象的 vtable 中。
 
 The bottom line is that polymorphism is an application of pointers to functions. Programmers have been using pointers to functions to achieve polymorphic behavior since Von Neumann architectures were first implemented in the late 1940s. In other words, OO has provided nothing new.
 

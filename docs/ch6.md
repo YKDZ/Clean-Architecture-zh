@@ -133,7 +133,7 @@ A simple example of this approach is Clojure’s atom facility:
 
 In this code, the counter variable is defined as an atom. In Clojure, an atom is a special kind of variable whose value is allowed to mutate under very disciplined conditions that are enforced by the swap! function.
 
-> 在这段代码中，counter 变量被定义为 atom 类型。在 Clojure 中，atom 是一类特殊的变量，它被允许在 swap!函数定义的严格条件下进行更改。
+> 在这段代码中，counter 变量被定义为 atom 类型。在 Clojure 中，atom 是一类特殊的变量，它被允许在 swap! 函数定义的严格条件下进行更改。
 
 The swap! function, shown in the preceding code, takes two arguments: the atom to be mutated, and a function that computes the new value to be stored in the atom. In our example code, the counter atom will be changed to the value computed by the inc function, which simply increments its argument.
 
